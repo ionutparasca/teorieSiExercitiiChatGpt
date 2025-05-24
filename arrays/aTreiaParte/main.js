@@ -35,4 +35,4 @@ console.log("===============================");
 
 const numere1 = [10, 20, 30];
 const suma = numere1.reduce((total, valoare) => total + valoare, 0);
-console.log(suma); // 60
+console.log(suma);
