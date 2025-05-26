@@ -164,8 +164,15 @@ if (isNaN(number6)) {
 
 // Output: Tails
 
-// const input7 = prompt("intorduceti un nr valdi!");
-// const number7 = Number(input7);
+const coin = "head";
+const reversCoin = "tail";
+
+if (Math.random() < 0.5) {
+  console.log(`A fost aruncat ${coin}`);
+} else {
+  console.log(`A fost aruncat ${reversCoin}`);
+}
+
 // CHALLENGE 4: Dice game
 // Create a program that simulates a dice roll game between two players. The program will ask for the players' names, roll the dice for each player, and then display the results.
 
@@ -189,6 +196,24 @@ if (isNaN(number6)) {
 //     Ann rolls: 2
 //     Bob rolls: 2
 //     It's a tie!
+
+const firstPlayer = prompt("Introduceți numele primului jucător:");
+const secondPlayer = prompt("Introduceți numele celui de-al doilea jucător:");
+
+const firstRoll = Math.floor(Math.random() * 6) + 1;
+const secondRoll = Math.floor(Math.random() * 6) + 1;
+
+console.log(`${firstPlayer} a dat: ${firstRoll}`);
+console.log(`${secondPlayer} a dat: ${secondRoll}`);
+
+if (firstRoll > secondRoll) {
+  console.log(`${firstPlayer} câștigă!`);
+} else if (secondRoll > firstRoll) {
+  console.log(`${secondPlayer} câștigă!`);
+} else {
+  console.log("Este egalitate!");
+}
+
 // CHALLENGE 5: Guess the number
 // Create a program that generates a random number between 1 and 3. The user is prompted to guess the number, and if they guess correctly, they win.
 
@@ -206,6 +231,26 @@ if (isNaN(number6)) {
 
 // Output:
 //     Wrong! The correct number was 1.
+
+const luckyNumber = Math.floor(Math.random() * 3) + 1;
+const playerName = prompt("Introduceți numele jucătorului:");
+const guessInput = prompt("Alegeți un număr între 1 și 3 inclusiv:");
+
+const guessedNumber = Number(guessInput);
+
+if (isNaN(guessedNumber) || guessedNumber < 1 || guessedNumber > 3) {
+  console.log("Vă rugăm introduceți un număr valid între 1 și 3!");
+} else {
+  console.log(`Numărul generat de calculator a fost: ${luckyNumber}`);
+  console.log(`${playerName} a ales: ${guessedNumber}`);
+
+  if (guessedNumber === luckyNumber) {
+    console.log("Ai câștigat! 🎉");
+  } else {
+    console.log(`Ai pierdut! Numărul corect era ${luckyNumber}.`);
+  }
+}
+
 // CHALLENGE 6: Rock Scissors Paper generator
 // Create a program that randomly generates one of the options of the rock-paper-scissors game.
 
@@ -223,3 +268,16 @@ if (isNaN(number6)) {
 
 // Output:
 //     Paper
+const firstOption = "rock";
+const secondOption = "paper";
+const thirdOption = "scissors";
+
+const chosenOption = Math.floor(Math.random() * 3) + 1;
+
+if (chosenOption === 1) {
+  console.log(`Calculatorul a ales: ${firstOption}`);
+} else if (chosenOption === 2) {
+  console.log(`Calculatorul a ales: ${secondOption}`);
+} else {
+  console.log(`Calculatorul a ales: ${thirdOption}`);
+}
